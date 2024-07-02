@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class accountDetails {
+private:
+  string accNum; // accnum means account number
+  double accBalance;
+
+public:
+  accountDetails(string accNumber, double initialBalance) {
+    accNum = accNumber;
+    accBalance = initialBalance;
+  }
+
+  string getaccNumber() {
+    return accNum;
+  }
+
+  // Corrected getter for balance
+  double getInitialBalance() {
+    return accBalance;
+  }
+
+  void deposit(double amount) {
+    if (amount > 0) {
+      accBalance += amount;
+    }
+  }
+
+  void withdraw(double amount) {
+    if (amount > 0 && amount <= accBalance) {
+      accBalance -= amount;
+    }
+  }
+};
+
+int main() {
+  accountDetails myAccount("76867756", 300.000);
+  std::cout << "The Account Number is: " << myAccount.getaccNumber() << std::endl;
+  std::cout << "The Initial balance is: " << myAccount.getInitialBalance() << std::endl;
+
+  myAccount.deposit(500000.00);
+  std::cout << "Balance after deposit is: " << myAccount.getInitialBalance() << std::endl;
+
+  myAccount.withdraw(300000.00);
+  std::cout << "Balance after withdrawal is: " << myAccount.getInitialBalance() << std::endl;
+  return 0;
+}
+
+
+
+OUTPUT
+
+The Account Number is: 76867756
+The Initial balance is: 300
+Balance after deposit is: 500300
+Balance after withdrawal is: 200300
