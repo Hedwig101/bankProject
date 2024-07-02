@@ -50,9 +50,4 @@ int main() {
 
 
 
-OUTPUT
 
-The Account Number is: 76867756
-The Initial balance is: 300
-Balance after deposit is: 500300
-Balance after withdrawal is: 200300
